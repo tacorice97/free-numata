@@ -85,7 +85,7 @@
                     <h3 class="section-jp">freeが選ばれる理由</h3>
                 </div>
                 <div class="bento-grid">
-                    <div class="bento-item highlight fade-in">
+                    <div class="bento-item fade-in">
                         <div class="icon-box">🎓</div>
                         <div class="bento-content">
                             <h4>プロ専任講師のみ</h4>
@@ -151,8 +151,9 @@
                                 <span class="tm-price">月謝 10,000円</span>
                             </div>
                         </div>
-                        <div class="timeline-arrow">
-                            <span class="arrow-down">⬇</span> 進学しても...
+                        <div class="timeline-arrow-container">
+                            <div class="timeline-label">進学しても...</div>
+                            <div class="timeline-icon">⬇</div>
                         </div>
                         <div class="timeline-item highlight">
                             <div class="tm-point end"></div>
@@ -164,8 +165,8 @@
                     </div>
 
                     <div class="rule-notes">
-                        <p>※進学後にコース変更やコマ数を増やしても「小学生料金の単価」が適用されます。</p>
-                        <p class="small">※講習会は学年別料金 / 退会・3ヶ月以上の休会でリセットとなります。</p>
+                        <p class="note-text">※進学後にコース変更やコマ数を増やしても「小学生料金の単価」が適用されます。</p>
+                        <p class="note-text">※講習会は学年別料金 / 退会・3ヶ月以上の休会でリセットとなります。</p>
                     </div>
                 </div>
             </div>
@@ -213,16 +214,17 @@
                 <div class="pricing-wrapper">
                     <div class="price-card recommended fade-in">
                         <div class="pc-header">
-                            <span class="pc-badge">人気No.1</span>
-                            <h4>個別指導 ＆ 通い放題</h4>
+                            <span class="pc-badge">オススメ</span>
+                            <h4>コースA：個別指導 ＆ 通い放題コース</h4>
                             <p class="pc-desc">学習習慣を劇的に変えるフルサポート</p>
                         </div>
                         <div class="pc-features">
                             <ul>
                                 <li>1対2の個別指導</li>
-                                <li class="strong">自習スペース使い放題</li>
-                                <li class="strong">LINEでの質問・添削・相談</li>
-                                <li>個別学習計画の作成</li>
+                                <li>自習時の質問対応</li>
+                                <li class="text-blue">自習スペース使い放題</li>
+                                <li class="text-blue">LINEでの質問・作文/ライティング添削・学習相談に対応</li>
+                                <li class="text-blue">個別学習計画の作成</li>
                             </ul>
                         </div>
                         <div class="table-scroll-hint">横にスクロールできます →</div>
@@ -242,14 +244,14 @@
 
                     <div class="price-card fade-in">
                         <div class="pc-header">
-                            <h4>個別指導コース</h4>
+                            <h4>コースB：個別指導コース</h4>
                             <p class="pc-desc">決まった時間で集中して学びたい方</p>
                         </div>
                         <div class="pc-features">
                             <ul>
                                 <li>1対2の個別指導</li>
                                 <li>自習時の質問対応</li>
-                                <li class="mute">授業前後のみ自習利用可</li>
+                                <li>授業日の授業前後で自習スペース利用可</li>
                                 <li class="mute">LINEサポートなし</li>
                             </ul>
                         </div>
@@ -324,67 +326,7 @@
                             群馬県沼田市高橋場町2215-10
                         </address>
                         <p class="hours">平日・土・祝日：16:00 〜 22:00</p>
-                        <a href="https://lin.ee/gJxUEir" class="btn-primary full-width" target="_blank">Google Mapで見る</a>
+                        <a href="https://www.google.com/maps/search/?api=1&query=群馬県沼田市高橋場町2215-10" class="btn-primary full-width" target="_blank">Google Mapで見る</a>
                     </div>
                     <div class="access-map">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3203.2505581179617!2d139.05581537651817!3d36.64444597229215!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601e3894760a0f93%3A0x66c8209805903c73!2z44CSMzc4LTAwNTYg576k6aas55yM5rK855Sw5biC6auY6ZKL5aC055S6MjIxNS0xMA!5e0!3m2!1sja!2sjp!4v1703144000000!5m2!1sja!2sjp" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <div class="container">
-            <p class="copyright">© 2025 Individual Tutoring free</p>
-        </div>
-    </footer>
-
-    <div class="mobile-bottom-bar">
-        <a href="https://lin.ee/gJxUEir" class="bar-btn" target="_blank">
-            <span class="bar-sub">＼ 無料体験受付中 ／</span>
-            <span class="bar-main">LINEでお問合せ</span>
-        </a>
-    </div>
-
-    <script>
-        // Scroll Progress
-        window.onscroll = function() {
-            let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-            let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            let scrolled = (winScroll / height) * 100;
-            document.getElementById("scrollProgress").style.width = scrolled + "%";
-        };
-
-        // Mobile Menu
-        const hamburger = document.querySelector('.js-hamburger');
-        const mobileMenu = document.querySelector('.js-mobile-menu');
-        const mobileLinks = document.querySelectorAll('.mobile-link');
-
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            mobileMenu.classList.toggle('active');
-            document.body.classList.toggle('no-scroll');
-        });
-
-        mobileLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                hamburger.classList.remove('active');
-                mobileMenu.classList.remove('active');
-                document.body.classList.remove('no-scroll');
-            });
-        });
-
-        // Simple Intersection Observer for Fade-in
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, { threshold: 0.1 });
-
-        document.querySelectorAll('.fade-in, .fade-up').forEach(el => observer.observe(el));
-    </script>
-</body>
-</html>
+                        <iframe src="
