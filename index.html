@@ -1,487 +1,505 @@
-<!DOCTYPE html>
+<!-- index.html -->
+<!doctype html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>沼田市の個別指導塾 free | プロ講師による1対2指導・通い放題</title>
-    <meta name="description" content="群馬県沼田市の個別指導塾free。プロ専任講師による1対2の個別指導と続けやすい学習環境を提供。入会時の月謝が進学後も維持される安心の料金体系。英検5級〜準1級、中学・高校入試、定期テスト対策まで対応。無料体験実施中！">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>沼田市の個別指導塾 free｜プロ講師の1対2個別×通い放題</title>
+  <meta name="description" content="群馬県沼田市の個別指導塾 free。プロ専任講師による1対2指導＋自習スペース通い放題。入会時の月謝が卒業まで続く安心の料金体系。英検5級〜準1級、定期テスト〜入試まで対応。無料体験実施中。" />
+
+  <meta property="og:title" content="沼田市の個別指導塾 free｜1対2個別×通い放題" />
+  <meta property="og:description" content="プロ専任講師の1対2個別＋通い放題。入会時の月謝が卒業まで続く安心設計。無料体験は公式LINEへ。" />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#0b5bd3" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- GSAP (ScrollTrigger含む) / Lenis / SplitType -->
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/split-type@0.3.4/umd/index.min.js"></script>
+
+  <script defer src="main.js"></script>
+
+  <!-- 構造化データ（LocalBusiness） -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"LocalBusiness",
+    "name":"個別指導塾 free",
+    "address":{
+      "@type":"PostalAddress",
+      "postalCode":"378-0056",
+      "addressRegion":"群馬県",
+      "addressLocality":"沼田市",
+      "streetAddress":"高橋場町2215-10",
+      "addressCountry":"JP"
+    },
+    "areaServed":"群馬県沼田市",
+    "url":"https://lin.ee/gJxUEir",
+    "openingHours":"Mo-Sa 16:00-22:00",
+    "sameAs":["https://lin.ee/gJxUEir"]
+  }
+  </script>
 </head>
+
 <body>
-    <div class="ambient-bg">
-        <div class="blob blob-1"></div>
-        <div class="blob blob-2"></div>
-        <div class="blob blob-3"></div>
-    </div>
+  <!-- スクロール進捗バー -->
+  <div class="scroll-progress" aria-hidden="true">
+    <div class="scroll-progress__bar" id="scrollBar"></div>
+  </div>
 
-    <header class="header js-header">
-        <div class="container header-inner">
-            <div class="logo">
-                <a href="#" class="logo-link">
-                    <span class="logo-sub">沼田市の個別指導・英検対策なら</span>
-                    <div class="logo-main">個別指導塾 free</div>
-                </a>
-            </div>
-            
-            <nav class="nav-desktop">
-                <ul>
-                    <li><a href="#features" class="nav-link">塾の特徴</a></li>
-                    <li><a href="#tuition-rule" class="nav-link">月謝の仕組み</a></li>
-                    <li><a href="#flow" class="nav-link">入会までの流れ</a></li>
-                    <li><a href="#course" class="nav-link">コース・料金</a></li>
-                    <li><a href="#faq" class="nav-link">よくある質問</a></li>
-                </ul>
-            </nav>
-            <a href="https://lin.ee/gJxUEir" class="btn-line-header hover-lift" target="_blank">LINEでお問合せ</a>
+  <!-- 背景の光（カーソル追従） -->
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
 
-            <button class="hamburger js-hamburger" aria-label="メニューを開く">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-    </header>
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="トップへ">
+        <span class="brand__kicker">沼田市の個別指導・英検対策なら</span>
+        <span class="brand__name">個別指導塾 <em>free</em></span>
+      </a>
 
-    <div class="mobile-nav js-mobile-nav">
-        <div class="mobile-nav-inner">
-            <ul>
-                <li><a href="#features" class="mobile-link">塾の特徴</a></li>
-                <li><a href="#tuition-rule" class="mobile-link">月謝の仕組み</a></li>
-                <li><a href="#flow" class="mobile-link">入会までの流れ</a></li>
-                <li><a href="#course" class="mobile-link">コース・料金</a></li>
-                <li><a href="#faq" class="mobile-link">よくある質問</a></li>
-            </ul>
-            <div class="mobile-nav-cta">
-                <a href="https://lin.ee/gJxUEir" class="btn-line-main full-width" target="_blank">LINEでお問合せ</a>
-            </div>
-        </div>
-    </div>
+      <nav class="nav" aria-label="主要ナビゲーション">
+        <a href="#features" class="nav__link">特徴</a>
+        <a href="#tuition" class="nav__link">月謝の仕組み</a>
+        <a href="#flow" class="nav__link">入会まで</a>
+        <a href="#courses" class="nav__link">コース・料金</a>
+        <a href="#faq" class="nav__link">FAQ</a>
+        <a href="#access" class="nav__link">教室案内</a>
+      </nav>
 
-    <main>
-        <section class="hero">
-            <div class="container">
-                <div class="hero-content">
-                    <p class="hero-subtext js-split-text">プロの専任講師による1対2の個別指導と続けやすい学習環境。</p>
-                    <h2 class="hero-title">
-                        <span class="block-reveal">個別指導</span>
-                        <span class="text-blue scale-up">×</span>
-                        <span class="block-reveal">通い放題</span>
-                    </h2>
-                    <p class="hero-description js-fade-up">
-                        学習習慣の定着から受験・英検対策まで。<br>
-                        「入会時の月謝が卒業まで続く」安心の環境で、お子様の可能性を広げます。
-                    </p>
-                    <div class="cta-area js-fade-up" style="transition-delay: 0.2s;">
-                        <p class="cta-top-text">＼ 無料体験実施中！ ／</p>
-                        <a href="https://lin.ee/gJxUEir" class="btn-line-main magnetic-btn" target="_blank">
-                            <span class="btn-text">申込・お問合せは公式LINEへ</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="wave-divider-bottom">
-                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                    <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
-                </svg>
-            </div>
-        </section>
-
-        <section id="features" class="section">
-            <div class="container">
-                <div class="section-title-area js-scroll-reveal">
-                    <span class="section-subtitle">Features</span>
-                    <h3 class="section-title">freeが選ばれる理由</h3>
-                </div>
-                <div class="feature-grid">
-                    <div class="feature-item tilt-card js-scroll-reveal">
-                        <div class="feature-icon-wrapper">
-                            <div class="feature-icon">🎓</div>
-                        </div>
-                        <h4>プロ専任講師のみ</h4>
-                        <p>大学生アルバイトはゼロ。経験豊富なプロ講師が責任を持って直接指導。担当が頻繁に変わる心配もありません。</p>
-                    </div>
-                    <div class="feature-item tilt-card js-scroll-reveal">
-                        <div class="feature-icon-wrapper">
-                            <div class="feature-icon">👥</div>
-                        </div>
-                        <h4>1対2の個別指導</h4>
-                        <p>解説と演習を交互に行うのに最適な「1対2」を徹底。きめ細やかなサポートで、わからないを置き去りにしません。</p>
-                    </div>
-                    <div class="feature-item tilt-card js-scroll-reveal">
-                        <div class="feature-icon-wrapper">
-                            <div class="feature-icon">🤝</div>
-                        </div>
-                        <h4>きめ細かいサポート</h4>
-                        <p>公式LINEで授業担当講師と直接連絡が取れます。生徒さんの様子や情報を共有しやすく、安心して通うことができます。</p>
-                    </div>
-                    <div class="feature-item tilt-card js-scroll-reveal">
-                        <div class="feature-icon-wrapper">
-                            <div class="feature-icon">✍️</div>
-                        </div>
-                        <h4>定期テスト・入試対策</h4>
-                        <p>学校の定期テスト対策、入試対策、記述・論述まで丁寧に指導。地元の学校の傾向に合わせた対策も万全です。</p>
-                    </div>
-                    <div class="feature-item tilt-card js-scroll-reveal">
-                        <div class="feature-icon-wrapper">
-                            <div class="feature-icon">🅰️</div>
-                        </div>
-                        <h4>英検対策</h4>
-                        <p>英検5級〜準1級まで幅広く対応。ライティング・2次試験対策もお任せください。</p>
-                    </div>
-                    <div class="feature-item tilt-card js-scroll-reveal">
-                        <div class="feature-icon-wrapper">
-                            <div class="feature-icon">✨</div>
-                        </div>
-                        <h4>明瞭な料金体系</h4>
-                        <p>月謝以外の管理費や施設維持費などの隠れた費用は一切なし。シンプルで誠実、納得感のある価格設定です。</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="tuition-rule" class="section bg-light-gradient">
-            <div class="wave-divider-top">
-                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                    <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" class="shape-fill"></path>
-                </svg>
-            </div>
-            
-            <div class="container">
-                <div class="rule-box tilt-card-large js-scroll-reveal">
-                    <div class="rule-header">
-                        <span class="rule-badge pulse-anim">独自の価格保護制度</span>
-                        <h4>進学しても、月謝はずっと「入会時のまま」</h4>
-                    </div>
-                    <p class="rule-description">
-                        freeでは、<strong>「入会した時の学年料金」が卒業まで適用されます。</strong><br>
-                        中学生・高校生へと進学しても月謝が上がることはありません。
-                    </p>
-                    
-                    <div class="rule-visual-container">
-                        <div class="rule-example-card">
-                            <div class="example-top">例えば、小学6年生で入会した場合</div>
-                            <div class="rule-visual">
-                                <div class="rule-step">
-                                    <div class="step-circle">小6</div>
-                                    <div class="step-info">
-                                        <span class="step-tag">入会時 (コースB・週1コマ)</span>
-                                        <span class="step-price">10,000円</span>
-                                    </div>
-                                </div>
-                                <div class="rule-connector">
-                                    <div class="connector-line"></div>
-                                    <div class="connector-arrow">▶</div>
-                                </div>
-                                <div class="rule-step is-active">
-                                    <div class="step-circle gold">進学</div>
-                                    <div class="step-info">
-                                        <span class="step-tag">中学・高校進学後も</span>
-                                        <span class="step-price highlight">10,000円を維持！</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="rule-highlight">
-                                <p><strong>さらにここがポイント！</strong></p>
-                                <p>進学後にコース変更やコマ数を増やしても、<br><span>ずっと【小学生料金の単価】が適用</span>されます。</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="rule-notes-area">
-                        <p class="rule-note">※期間講習会（夏期講習や冬期講習）は学年別の料金となります。</p>
-                        <p class="rule-note">※退会、または3ヶ月以上の休会をされた場合に限り、本制度はリセットされます。</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="flow" class="section">
-            <div class="container">
-                <div class="section-title-area js-scroll-reveal">
-                    <span class="section-subtitle">Enrollment Flow</span>
-                    <h3 class="section-title">入会までの流れ</h3>
-                </div>
-                <div class="flow-container">
-                    <div class="flow-line-bg"></div>
-                    
-                    <div class="flow-step js-scroll-reveal">
-                        <div class="flow-num">1</div>
-                        <div class="flow-content">
-                            <h4>公式LINEにお問合せ</h4>
-                            <p>まずは気軽にご相談ください。24時間受付中です。</p>
-                        </div>
-                    </div>
-                    <div class="flow-step js-scroll-reveal">
-                        <div class="flow-num">2</div>
-                        <div class="flow-content">
-                            <h4>無料体験にお越しいただく</h4>
-                            <p>実際の授業の雰囲気や、自習スペースの使い心地を確認してください。</p>
-                        </div>
-                    </div>
-                    <div class="flow-step js-scroll-reveal">
-                        <div class="flow-num">3</div>
-                        <div class="flow-content">
-                            <h4>学習プランの決定</h4>
-                            <p>通い方（コース・コマ数）、日時（曜日・時間帯）、受講教科を個別に決定します。</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="course" class="section bg-light-gradient section-skew">
-            <div class="container skew-fix">
-                <div class="section-title-area js-scroll-reveal">
-                    <span class="section-subtitle">Courses & Price</span>
-                    <h3 class="section-title">コース・料金表</h3>
-                </div>
-
-                <div class="course-grid">
-                    <div class="course-card recommendation tilt-card js-scroll-reveal">
-                        <div class="course-header">
-                            <span class="recommend-badge">オススメ</span>
-                            <h4>コースA：個別指導＆通い放題コース</h4>
-                            <p class="course-tagline">学習習慣を劇的に変えるフルサポートコース</p>
-                        </div>
-                        <div class="course-body">
-                            <ul class="course-benefits">
-                                <li class="benefit-highlight">1対2の個別指導</li>
-                                <li class="benefit-highlight">自習時の質問対応</li>
-                                <li><strong>授業日以外も自習スペースが使い放題</strong></li>
-                                <li><strong>保護者様・生徒様とのLINE学習相談</strong></li>
-                                <li><strong>LINEでの質問対応</strong></li>
-                                <li><strong>LINEでの作文・英検ライティング添削対応</strong></li>
-                                <li><strong>ご要望に応じた個別学習計画の作成</strong></li>
-                            </ul>
-                            <div class="table-wrapper">
-                                <table class="price-table">
-                                    <thead>
-                                        <tr><th>対象</th><th>週1コマ</th><th>週2コマ</th><th>週3コマ</th></tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr><th>小学生</th><td>14,000円</td><td>23,000円</td><td>32,000円</td></tr>
-                                        <tr><th>中学生</th><td>16,000円</td><td>26,000円</td><td>36,000円</td></tr>
-                                        <tr><th>高校生</th><td>18,000円</td><td>30,000円</td><td>42,000円</td></tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="course-card tilt-card js-scroll-reveal">
-                        <div class="course-header">
-                            <h4>コースB：個別指導コース</h4>
-                            <p class="course-tagline">決まった時間で集中して学びたい方向け</p>
-                        </div>
-                        <div class="course-body">
-                            <ul class="course-benefits">
-                                <li class="benefit-highlight">1対2の個別指導</li>
-                                <li class="benefit-highlight">自習時の質問対応</li>
-                                <li>授業日の授業前後のみ自習スペース利用可能</li>
-                                <li class="text-muted">（LINEでの質問対応・添削対応・学習計画作成は含みません）</li>
-                            </ul>
-                            <div class="table-wrapper">
-                                <table class="price-table">
-                                    <thead>
-                                        <tr><th>対象</th><th>週1コマ</th><th>週2コマ</th><th>週3コマ</th></tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr><th>小学生</th><td>10,000円</td><td>20,000円</td><td>30,000円</td></tr>
-                                        <tr><th>中学生</th><td>12,000円</td><td>23,000円</td><td>34,000円</td></tr>
-                                        <tr><th>高校生</th><td>14,000円</td><td>27,000円</td><td>40,000円</td></tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="fees-footer js-scroll-reveal">
-                    <p class="fee-more-note">※週4コマ以上も承っております。詳細はお問合せください。</p>
-                    <div class="fee-flex">
-                        <div class="fee-item">入会金 <span class="fee-val">10,000円</span></div>
-                        <div class="fee-divider">/</div>
-                        <div class="fee-item">設備費 <span class="fee-val">10,000円</span><span class="fee-sub">（初年度のみ）</span></div>
-                        <div class="fee-divider">/</div>
-                        <div class="fee-item">教材費 <span class="fee-val">1,500円程度</span><span class="fee-sub">（1教科/必要時のみ）</span></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="faq" class="section">
-            <div class="container">
-                <div class="section-title-area js-scroll-reveal">
-                    <h3 class="section-title">よくあるご質問</h3>
-                </div>
-                <div class="faq-list">
-                    <div class="faq-item js-accordion js-scroll-reveal">
-                        <dt>体験授業はできますか？<span class="icon-plus"></span></dt>
-                        <dd>はい、1コマ（60分）の無料体験が可能です。公式LINEからお気軽にお問合せください。</dd>
-                    </div>
-                    <div class="faq-item js-accordion js-scroll-reveal">
-                        <dt>授業の振替は可能ですか？<span class="icon-plus"></span></dt>
-                        <dd>事前欠席のご連絡をいただいた場合は振替可能です（有効期間は本来の授業日の前後1ヶ月となります）。当日欠席の場合は振替不可となりますのでご了承ください。</dd>
-                    </div>
-                    <div class="faq-item js-accordion js-scroll-reveal">
-                        <dt>月の途中から入会できますか？<span class="icon-plus"></span></dt>
-                        <dd>はい、可能です。初月分は日割り計算となりますので、思い立った時にいつでもスタートしていただけます。</dd>
-                    </div>
-                    <div class="faq-item js-accordion js-scroll-reveal">
-                        <dt>通い方（コースや科目）の変更はできますか？<span class="icon-plus"></span></dt>
-                        <dd>はい、可能です。翌月からの変更を基本としております。詳細は公式LINEでご相談ください。</dd>
-                    </div>
-                    <div class="faq-item js-accordion js-scroll-reveal">
-                        <dt>1コマで複数の教科を受講できますか？<span class="icon-plus"></span></dt>
-                        <dd>可能ですが、1教科にかけられる時間が短くなってしまうため、あまりお勧めはしておりません。複数教科を希望される場合は、週2コマ以上のコースをお勧めしています。</dd>
-                    </div>
-                    <div class="faq-item js-accordion js-scroll-reveal">
-                        <dt>夏期講習・冬期講習のみの参加はできますか？<span class="icon-plus"></span></dt>
-                        <dd>はい、可能です。講習会のみの参加の場合は外部生料金となります。</dd>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section bg-gray">
-            <div class="container access-grid">
-                <div class="access-info js-scroll-reveal">
-                    <h3 class="section-title text-left">教室案内</h3>
-                    <p class="address">
-                        <strong>個別指導塾 free</strong><br>
-                        〒378-0056<br>
-                        群馬県沼田市高橋場町2215-10
-                    </p>
-                    <p class="open-hours">
-                        <span class="icon-clock">🕒</span> 平日・土・祝日：16:00 〜 22:00
-                    </p>
-                    <div class="cta-access">
-                        <a href="https://lin.ee/gJxUEir" class="btn-line-main magnetic-btn" target="_blank">
-                            <span>無料体験・お問合せはこちら</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="access-map js-scroll-reveal">
-                    <div class="map-frame">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3203.2505581179617!2d139.05581537651817!3d36.64444597229215!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601e3894760a0f93%3A0x66c8209805903c73!2z44CSMzc4LTAwNTYg576k6aas55yM5rK855Sw5biC6auY6ZKL5aC055S6MjIxNS0xMA!5e0!3m2!1sja!2sjp!4v1703144000000!5m2!1sja!2sjp" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-logo">個別指導塾 free</div>
-            <p>© 2025 Individual Tutoring free All Rights Reserved.</p>
-        </div>
-    </footer>
-
-    <div class="mobile-cta-container">
-        <a href="https://lin.ee/gJxUEir" class="btn-line-mobile" target="_blank">
-            <div class="cta-content">
-                <span class="cta-sub">＼ 無料体験受付中 ／</span>
-                <span class="cta-main">LINEでお問い合わせ</span>
-            </div>
-            <div class="cta-icon">➜</div>
+      <div class="header-cta">
+        <a class="btn btn--line magnetic" href="https://lin.ee/gJxUEir" target="_blank" rel="noopener">
+          <span class="btn__shine" aria-hidden="true"></span>
+          LINEでお問合せ
         </a>
+
+        <button class="menu-btn" id="menuBtn" aria-label="メニューを開く" aria-expanded="false">
+          <span class="menu-btn__bar"></span>
+          <span class="menu-btn__bar"></span>
+          <span class="menu-btn__bar"></span>
+        </button>
+      </div>
     </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // 1. Scroll Reveal (Intersection Observer)
-            const observerOptions = {
-                root: null,
-                rootMargin: '0px',
-                threshold: 0.15
-            };
+    <!-- モバイルメニュー -->
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+      <div class="mobile-menu__panel">
+        <div class="mobile-menu__top">
+          <div class="mobile-menu__title">メニュー</div>
+          <button class="mobile-menu__close" id="menuClose" aria-label="メニューを閉じる">×</button>
+        </div>
+        <a class="mobile-menu__link" href="#features">特徴</a>
+        <a class="mobile-menu__link" href="#tuition">月謝の仕組み</a>
+        <a class="mobile-menu__link" href="#flow">入会まで</a>
+        <a class="mobile-menu__link" href="#courses">コース・料金</a>
+        <a class="mobile-menu__link" href="#faq">FAQ</a>
+        <a class="mobile-menu__link" href="#access">教室案内</a>
 
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach((entry, index) => {
-                    if (entry.isIntersecting) {
-                        // Stagger effect calculation
-                        setTimeout(() => {
-                            entry.target.classList.add('is-visible');
-                        }, index * 100); // 100ms delay per simultaneous element
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, observerOptions);
+        <div class="mobile-menu__cta">
+          <a class="btn btn--line btn--block" href="https://lin.ee/gJxUEir" target="_blank" rel="noopener">
+            無料体験・お問合せ（LINE）
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
 
-            document.querySelectorAll('.js-scroll-reveal, .js-fade-up, .hero-title, .cta-area').forEach(el => {
-                observer.observe(el);
-            });
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero__bg" aria-hidden="true"></div>
 
-            // 2. Hamburger Menu
-            const hamburger = document.querySelector('.js-hamburger');
-            const mobileNav = document.querySelector('.js-mobile-nav');
-            const header = document.querySelector('.header');
-            const mobileLinks = document.querySelectorAll('.mobile-link');
+      <div class="container hero__inner">
+        <div class="hero__copy">
+          <p class="pill" data-animate="fade">
+            <span class="pill__dot" aria-hidden="true"></span>
+            プロ専任講師 × 1対2個別 × 通い放題
+          </p>
 
-            hamburger.addEventListener('click', () => {
-                hamburger.classList.toggle('is-active');
-                mobileNav.classList.toggle('is-active');
-                document.body.classList.toggle('no-scroll');
-            });
+          <h1 class="hero__title split" data-split>
+            個別指導 <span class="accent">×</span> 通い放題で<br/>
+            学習習慣を「仕組み化」
+          </h1>
 
-            mobileLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    hamburger.classList.remove('is-active');
-                    mobileNav.classList.remove('is-active');
-                    document.body.classList.remove('no-scroll');
-                });
-            });
+          <p class="hero__lead" data-animate="fade">
+            定期テスト〜入試・英検まで、地元に根ざして伴走。<br/>
+            <strong>「入会時の月謝が卒業まで続く」</strong>安心の料金体系で、長く通うほどお得です。
+          </p>
 
-            // 3. 3D Tilt Effect for Cards
-            const cards = document.querySelectorAll('.tilt-card, .tilt-card-large');
-            
-            cards.forEach(card => {
-                card.addEventListener('mousemove', (e) => {
-                    const rect = card.getBoundingClientRect();
-                    const x = e.clientX - rect.left;
-                    const y = e.clientY - rect.top;
-                    
-                    const centerX = rect.width / 2;
-                    const centerY = rect.height / 2;
-                    
-                    const rotateX = ((y - centerY) / centerY) * -5; // Max 5deg
-                    const rotateY = ((x - centerX) / centerX) * 5;
+          <div class="hero__actions" data-animate="fade">
+            <a class="btn btn--line btn--xl magnetic" href="https://lin.ee/gJxUEir" target="_blank" rel="noopener">
+              <span class="btn__shine" aria-hidden="true"></span>
+              無料体験・お問合せは公式LINEへ
+            </a>
+            <a class="btn btn--ghost" href="#courses">料金を見る</a>
+          </div>
 
-                    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
-                });
+          <div class="hero__meta" data-animate="fade">
+            <div class="meta-card">
+              <div class="meta-card__label">開講日</div>
+              <div class="meta-card__value">平日・土・祝日</div>
+            </div>
+            <div class="meta-card">
+              <div class="meta-card__label">時間</div>
+              <div class="meta-card__value">16:00〜22:00</div>
+            </div>
+            <div class="meta-card">
+              <div class="meta-card__label">所在地</div>
+              <div class="meta-card__value">沼田市 高橋場町</div>
+            </div>
+          </div>
+        </div>
 
-                card.addEventListener('mouseleave', () => {
-                    card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale(1)';
-                });
-            });
+        <div class="hero__visual" aria-hidden="true">
+          <div class="glass-orb orb-1"></div>
+          <div class="glass-orb orb-2"></div>
+          <div class="glass-orb orb-3"></div>
 
-            // 4. Accordion
-            const accordions = document.querySelectorAll('.js-accordion');
-            accordions.forEach(acc => {
-                acc.addEventListener('click', () => {
-                    acc.classList.toggle('is-open');
-                });
-            });
+          <div class="stat-stack">
+            <div class="stat-card tilt" data-tilt>
+              <div class="stat-card__kicker">指導形態</div>
+              <div class="stat-card__big">1対2</div>
+              <div class="stat-card__small">解説↔演習が回る最適解</div>
+            </div>
 
-            // 5. Magnetic Button Effect
-            const btns = document.querySelectorAll('.magnetic-btn');
-            btns.forEach(btn => {
-                btn.addEventListener('mousemove', (e) => {
-                    const rect = btn.getBoundingClientRect();
-                    const x = e.clientX - rect.left - rect.width / 2;
-                    const y = e.clientY - rect.top - rect.height / 2;
-                    btn.style.transform = `translate(${x * 0.2}px, ${y * 0.2}px)`;
-                });
-                btn.addEventListener('mouseleave', () => {
-                    btn.style.transform = 'translate(0px, 0px)';
-                });
-            });
-        });
-    </script>
+            <div class="stat-card tilt" data-tilt>
+              <div class="stat-card__kicker">英検対応</div>
+              <div class="stat-card__big">5級〜準1級</div>
+              <div class="stat-card__small">ライティング／面接も対応</div>
+            </div>
+
+            <div class="stat-card tilt" data-tilt>
+              <div class="stat-card__kicker">無料体験</div>
+              <div class="stat-card__big">60分</div>
+              <div class="stat-card__small">雰囲気・自習席も確認OK</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__marquee" aria-hidden="true">
+        <div class="marquee">
+          <div class="marquee__track">
+            <span>専任プロ講師</span><i></i><span>1対2個別</span><i></i><span>通い放題</span><i></i>
+            <span>料金がずっと据え置き</span><i></i><span>英検対策</span><i></i><span>定期テスト</span><i></i>
+            <span>専任プロ講師</span><i></i><span>1対2個別</span><i></i><span>通い放題</span><i></i>
+            <span>料金がずっと据え置き</span><i></i><span>英検対策</span><i></i><span>定期テスト</span><i></i>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="section" id="features">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-head__eyebrow" data-animate="fade">Features</p>
+          <h2 class="section-head__title split" data-split>free が選ばれる理由</h2>
+          <p class="section-head__desc" data-animate="fade">
+            派手なだけじゃなく、<strong>「続く」「伸びる」「安心」</strong>を設計しています。
+          </p>
+        </div>
+
+        <div class="grid grid--3">
+          <article class="card card--feature tilt" data-tilt data-animate="rise">
+            <div class="card__icon">🎓</div>
+            <h3 class="card__title">プロ専任講師のみ</h3>
+            <p class="card__text">大学生アルバイトではなく、経験豊富な講師が責任を持って担当。進学後も担当が変わらず安心です。</p>
+          </article>
+
+          <article class="card card--feature tilt" data-tilt data-animate="rise">
+            <div class="card__icon">👥</div>
+            <h3 class="card__title">1対2の個別指導</h3>
+            <p class="card__text">解説と演習を交互に回せる「1対2」にこだわり。わからないを置き去りにしません。</p>
+          </article>
+
+          <article class="card card--feature tilt" data-tilt data-animate="rise">
+            <div class="card__icon">✨</div>
+            <h3 class="card__title">明瞭な料金体系</h3>
+            <p class="card__text">管理費・維持費などの“よくある追加”は基本なし。シンプルで納得感のある設計です。</p>
+          </article>
+
+          <article class="card card--feature tilt" data-tilt data-animate="rise">
+            <div class="card__icon">✍️</div>
+            <h3 class="card__title">定期テスト・入試対策</h3>
+            <p class="card__text">学校の範囲〜受験まで。地元の傾向に合わせた対策で、点数と自信を積み上げます。</p>
+          </article>
+
+          <article class="card card--feature tilt" data-tilt data-animate="rise">
+            <div class="card__icon">🅰️</div>
+            <h3 class="card__title">英検対策</h3>
+            <p class="card__text">英検5級〜準1級対応。ライティング添削や2次対策もサポートします。</p>
+          </article>
+
+          <article class="card card--feature tilt" data-tilt data-animate="rise">
+            <div class="card__icon">📚</div>
+            <h3 class="card__title">自習で習慣化</h3>
+            <p class="card__text">授業だけで終わらせず、家でも続く学習習慣へ。通い方の設計まで一緒に作ります。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- TUITION RULE -->
+    <section class="section section--alt" id="tuition">
+      <div class="container">
+        <div class="spotlight" data-animate="spot">
+          <div class="spotlight__badge">独自の価格保護制度</div>
+          <h2 class="spotlight__title split" data-split>進学しても、月謝はずっと「入会時のまま」</h2>
+          <p class="spotlight__desc" data-animate="fade">
+            freeでは <strong>「入会時の学年料金」</strong> が卒業まで適用されます。<br/>
+            中学・高校へ進学しても月謝が上がらないので、長く通うほど安心です。
+          </p>
+
+          <div class="rule-demo" data-animate="rise">
+            <div class="rule-demo__head">例えば、小学6年生で入会した場合</div>
+            <div class="rule-demo__body">
+              <div class="chip">
+                <div class="chip__top">小学6年生で入会（コースB・週1コマ）</div>
+                <div class="chip__big">月謝：10,000円</div>
+              </div>
+              <div class="rule-demo__arrow" aria-hidden="true">→</div>
+              <div class="chip chip--hot">
+                <div class="chip__top">中学・高校進学後も</div>
+                <div class="chip__big">10,000円を維持！</div>
+              </div>
+            </div>
+
+            <div class="rule-demo__note">
+              <strong>さらにここがポイント：</strong> 進学後にコース変更やコマ数を増やしても、<span>入会時単価</span>が適用されます。
+            </div>
+
+            <ul class="rule-demo__foot">
+              <li>※ 期間講習会（夏期・冬期講習）は学年別料金となります。</li>
+              <li>※ 退会、または3ヶ月以上の休会で本制度はリセットされます。</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FLOW -->
+    <section class="section" id="flow">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-head__eyebrow" data-animate="fade">Enrollment Flow</p>
+          <h2 class="section-head__title split" data-split>入会までの流れ</h2>
+          <p class="section-head__desc" data-animate="fade">迷わないように、シンプルに3ステップ。</p>
+        </div>
+
+        <div class="timeline" data-animate="fade">
+          <div class="timeline__line" aria-hidden="true"></div>
+
+          <div class="step">
+            <div class="step__num">1</div>
+            <div class="step__body">
+              <h3 class="step__title">公式LINEにお問合せ</h3>
+              <p class="step__text">まずは気軽にご相談ください。24時間受付中です。</p>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step__num">2</div>
+            <div class="step__body">
+              <h3 class="step__title">無料体験にお越しいただく</h3>
+              <p class="step__text">授業の雰囲気や、自習スペースの使い心地を確認できます。</p>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step__num">3</div>
+            <div class="step__body">
+              <h3 class="step__title">学習プランの決定</h3>
+              <p class="step__text">コース・コマ数・曜日・教科を、状況に合わせて個別に決定します。</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="center-cta" data-animate="fade">
+          <a class="btn btn--line btn--xl magnetic" href="https://lin.ee/gJxUEir" target="_blank" rel="noopener">
+            <span class="btn__shine" aria-hidden="true"></span>
+            まずはLINEで相談する
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- COURSES -->
+    <section class="section section--alt" id="courses">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-head__eyebrow" data-animate="fade">Courses & Price</p>
+          <h2 class="section-head__title split" data-split>コース・料金表</h2>
+          <p class="section-head__desc" data-animate="fade">
+            料金表は分かりやすく。<strong>追加費用の不安を減らす</strong>設計です。
+          </p>
+        </div>
+
+        <div class="grid grid--2">
+          <article class="pricing pricing--best" data-animate="rise">
+            <div class="pricing__badge">オススメ</div>
+            <header class="pricing__head">
+              <h3 class="pricing__title">コースA：個別指導＆通い放題コース</h3>
+              <p class="pricing__tag">学習習慣を“仕組み”で作るフルサポート</p>
+            </header>
+
+            <ul class="pricing__list">
+              <li>1対2の個別指導</li>
+              <li>自習時の質問対応</li>
+              <li><strong>授業日以外も自習スペース使い放題</strong></li>
+              <li><strong>保護者様・生徒様のLINE学習相談</strong></li>
+              <li><strong>LINEでの質問対応</strong></li>
+              <li><strong>作文・英検ライティング添削</strong></li>
+              <li><strong>個別学習計画の作成</strong></li>
+            </ul>
+
+            <div class="table-wrap">
+              <table class="table" aria-label="コースA 料金表">
+                <thead>
+                  <tr><th>対象</th><th>週1コマ</th><th>週2コマ</th><th>週3コマ</th></tr>
+                </thead>
+                <tbody>
+                  <tr><th>小学生</th><td>14,000円</td><td>23,000円</td><td>32,000円</td></tr>
+                  <tr><th>中学生</th><td>16,000円</td><td>26,000円</td><td>36,000円</td></tr>
+                  <tr><th>高校生</th><td>18,000円</td><td>30,000円</td><td>42,000円</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </article>
+
+          <article class="pricing" data-animate="rise">
+            <header class="pricing__head">
+              <h3 class="pricing__title">コースB：個別指導コース</h3>
+              <p class="pricing__tag">決まった時間で集中して学びたい方向け</p>
+            </header>
+
+            <ul class="pricing__list">
+              <li>1対2の個別指導</li>
+              <li>自習時の質問対応</li>
+              <li>授業日の授業前後のみ自習スペース利用可能</li>
+              <li class="muted">（LINE質問対応・添削・学習計画作成は含みません）</li>
+            </ul>
+
+            <div class="table-wrap">
+              <table class="table" aria-label="コースB 料金表">
+                <thead>
+                  <tr><th>対象</th><th>週1コマ</th><th>週2コマ</th><th>週3コマ</th></tr>
+                </thead>
+                <tbody>
+                  <tr><th>小学生</th><td>10,000円</td><td>20,000円</td><td>30,000円</td></tr>
+                  <tr><th>中学生</th><td>12,000円</td><td>23,000円</td><td>34,000円</td></tr>
+                  <tr><th>高校生</th><td>14,000円</td><td>27,000円</td><td>40,000円</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </article>
+        </div>
+
+        <div class="fees" data-animate="fade">
+          <div class="fees__note">※ 週4コマ以上も承っております。詳細はお問合せください。</div>
+          <div class="fees__grid">
+            <div class="fee">入会金：<strong>10,000円</strong></div>
+            <div class="fee">設備費：<strong>10,000円</strong>（初年度のみ）</div>
+            <div class="fee">教材費：<strong>1,500円程度</strong>（1教科/必要時のみ）</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-head__eyebrow" data-animate="fade">FAQ</p>
+          <h2 class="section-head__title split" data-split>よくあるご質問</h2>
+        </div>
+
+        <div class="accordion" data-animate="fade">
+          <details class="acc" open>
+            <summary class="acc__q">体験授業はできますか？</summary>
+            <div class="acc__a">はい、1コマ（60分）の無料体験が可能です。公式LINEからお気軽にお問合せください。</div>
+          </details>
+
+          <details class="acc">
+            <summary class="acc__q">授業の振替は可能ですか？</summary>
+            <div class="acc__a">事前欠席のご連絡をいただいた場合は振替可能です（有効期間は本来の授業日の前後1ヶ月）。当日欠席は振替不可となります。</div>
+          </details>
+
+          <details class="acc">
+            <summary class="acc__q">月の途中から入会できますか？</summary>
+            <div class="acc__a">はい、可能です。初月分は日割り計算となりますので、思い立った時にいつでもスタートしていただけます。</div>
+          </details>
+
+          <details class="acc">
+            <summary class="acc__q">通い方（コースや科目）の変更はできますか？</summary>
+            <div class="acc__a">はい、可能です。翌月からの変更を基本としております。詳細は公式LINEでご相談ください。</div>
+          </details>
+
+          <details class="acc">
+            <summary class="acc__q">1コマで複数教科を受講できますか？</summary>
+            <div class="acc__a">可能ですが、1教科の時間が短くなるため、週2コマ以上をおすすめしています。ご希望に合わせて調整できます。</div>
+          </details>
+
+          <details class="acc">
+            <summary class="acc__q">夏期・冬期講習のみ参加できますか？</summary>
+            <div class="acc__a">はい、可能です。講習会のみの参加の場合は外部生料金となります。</div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACCESS -->
+    <section class="section section--alt" id="access">
+      <div class="container">
+        <div class="access">
+          <div class="access__info" data-animate="rise">
+            <h2 class="access__title split" data-split>教室案内</h2>
+            <p class="access__addr">
+              <strong>個別指導塾 free</strong><br/>
+              〒378-0056<br/>
+              群馬県沼田市高橋場町2215-10
+            </p>
+            <p class="access__time">平日・土・祝日：16:00 〜 22:00</p>
+
+            <div class="access__cta">
+              <a class="btn btn--line btn--xl magnetic" href="https://lin.ee/gJxUEir" target="_blank" rel="noopener">
+                <span class="btn__shine" aria-hidden="true"></span>
+                無料体験・お問合せはこちら
+              </a>
+            </div>
+          </div>
+
+          <div class="access__map" data-animate="rise">
+            <iframe
+              title="個別指導塾 free マップ"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3203.2505581179617!2d139.05581537651817!3d36.64444597229215!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601e3894760a0f93%3A0x66c8209805903c73!2z44CSMzc4LTAwNTYg576k6aas55yM5rK855Sw5biC6auY6ZKL5aC055S6MjIxNS0xMA!5e0!3m2!1sja!2sjp!4v1703144000000!5m2!1sja!2sjp"
+              width="100%" height="380" style="border:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">© 2025 個別指導塾 free</div>
+      <a class="footer__link" href="#top">トップへ戻る</a>
+    </div>
+  </footer>
+
+  <!-- モバイル固定CTA -->
+  <div class="sticky-cta" aria-hidden="false">
+    <a class="sticky-cta__btn" href="https://lin.ee/gJxUEir" target="_blank" rel="noopener">
+      <span class="sticky-cta__sub">＼ 無料体験受付中 ／</span>
+      LINEでお問い合わせ
+    </a>
+  </div>
 </body>
 </html>
