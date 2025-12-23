@@ -139,7 +139,7 @@
                         <h3>進学しても、月謝は<br>ずっと「入会時のまま」</h3>
                         <p class="rule-lead">
                             freeでは、<strong>「入会した時の学年料金」</strong>が卒業まで適用されます。<br>
-                            中学生・高校生になっても値上げはありません。
+                            中学生・高校生になっても値上げはありません。さらに、進学後にコースやコマ数を変更しても、「入会時の学年料金」が適用されます。
                         </p>
                     </div>
                     
@@ -165,10 +165,72 @@
                     </div>
 
                     <div class="rule-notes">
-                        <p class="note-text">※進学後にコース変更やコマ数を増やしても「小学生料金の単価」が適用されます。</p>
-                        <p class="note-text">※講習会は学年別料金 / 退会・3ヶ月以上の休会でリセットとなります。</p>
+                        <p class="note-text">※期間講習(夏期講習・冬期講習)は学年別料金となります。</p>
+                        <p class="note-text">※退会・3ヶ月以上の休会でこの料金システムはリセットされます。</p>
                     </div>
                 </div>
+
+                <div class="comparison-area fade-in">
+                    <div class="comparison-header">
+                        <h3>中学生の年間費用で比較してみました</h3>
+                        <p class="comp-note">※中学生が通塾した場合の一例　※金額は目安です</p>
+                    </div>
+
+                    <div class="comp-case">
+                        <h4>1. 週1コマの場合</h4>
+                        <div class="comp-flex">
+                            <div class="comp-card general">
+                                <h5 class="comp-card-title">一般的な個別指導塾</h5>
+                                <ul class="comp-list">
+                                    <li>月謝：15,000円 × 12ヶ月</li>
+                                    <li>入会金：10,000〜20,000円</li>
+                                    <li>設備費：約20,000円 (毎年)</li>
+                                    <li>空調費・教材費など</li>
+                                </ul>
+                                <div class="comp-total">年間：約230,000円</div>
+                            </div>
+                            <div class="comp-card free">
+                                <h5 class="comp-card-title">個別指導塾 free</h5>
+                                <ul class="comp-list">
+                                    <li>月謝：12,000円 × 12ヶ月</li>
+                                    <li>入会金：10,000円</li>
+                                    <li>設備費：10,000円 (初年度のみ)</li>
+                                    <li>教材費は必要最低限</li>
+                                </ul>
+                                <div class="comp-total highlight">年間：約180,000円</div>
+                            </div>
+                        </div>
+                        <div class="comp-diff">
+                            <span class="diff-arrow">▶</span> 年間で約<strong>50,000円</strong>の差
+                        </div>
+                    </div>
+
+                    <div class="comp-case">
+                        <h4>2. 週2コマの場合</h4>
+                        <div class="comp-flex">
+                            <div class="comp-card general">
+                                <h5 class="comp-card-title">一般的な個別指導塾</h5>
+                                <ul class="comp-list">
+                                    <li>月謝：30,000円 × 12ヶ月</li>
+                                    <li>諸経費込み</li>
+                                </ul>
+                                <div class="comp-total">年間：約410,000円</div>
+                            </div>
+                            <div class="comp-card free">
+                                <h5 class="comp-card-title">個別指導塾 free</h5>
+                                <ul class="comp-list">
+                                    <li>月謝：23,000円 × 12ヶ月</li>
+                                    <li>諸経費込み</li>
+                                </ul>
+                                <div class="comp-total highlight">年間：約310,000円</div>
+                            </div>
+                        </div>
+                        <div class="comp-diff">
+                            <span class="diff-arrow">▶</span> 年間で約<strong>100,000円</strong>の差
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </section>
 
@@ -227,7 +289,7 @@
                                 <li class="text-blue">個別学習計画の作成</li>
                             </ul>
                         </div>
-                        <div class="table-scroll-hint">横にスクロールできます →</div>
+                        
                         <div class="table-container">
                             <table class="clean-table">
                                 <thead>
@@ -285,6 +347,7 @@
                             <dd>1,500円程度 <span class="small">/ 1教科</span></dd>
                         </div>
                     </dl>
+                    <p class="fee-note-bottom">※週4コマ以上も承っております。詳細はお問い合わせください。</p>
                 </div>
             </div>
         </section>
@@ -351,10 +414,8 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // JSが有効な場合のみアニメーションクラスを付与するためのフラグ
             document.body.classList.add('js-active');
 
-            // Scroll Progress
             window.addEventListener('scroll', () => {
                 let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
                 let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
@@ -363,7 +424,6 @@
                 if(bar) bar.style.width = scrolled + "%";
             });
 
-            // Mobile Menu
             const hamburger = document.querySelector('.js-hamburger');
             const mobileMenu = document.querySelector('.js-mobile-menu');
             const mobileLinks = document.querySelectorAll('.mobile-link');
@@ -384,7 +444,6 @@
                 });
             }
 
-            // Intersection Observer for Animation
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {

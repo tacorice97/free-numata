@@ -134,6 +134,7 @@ ul { list-style: none; }
 .rule-card {
     background: white; padding: 40px 24px; border-radius: 20px;
     box-shadow: var(--shadow-md); text-align: center;
+    margin-bottom: 40px;
 }
 .badge-red { background: #ef4444; color: white; font-size: 0.8rem; padding: 4px 10px; border-radius: 4px; font-weight: 700; vertical-align: middle; }
 .rule-header h3 { font-size: 1.4rem; margin: 15px 0; font-weight: 900; }
@@ -153,7 +154,6 @@ ul { list-style: none; }
 .tm-price { font-size: 1.2rem; font-weight: 900; color: var(--text-main); }
 .tm-price.active { color: var(--primary); }
 
-/* Timeline Arrow & Label */
 .timeline-arrow-container {
     display: flex; flex-direction: column; align-items: center; justify-content: center;
     color: var(--primary); font-weight: 700;
@@ -164,6 +164,45 @@ ul { list-style: none; }
 .rule-notes { text-align: left; margin-top: 20px; background: #f9fafb; padding: 15px; border-radius: 8px; }
 .note-text { font-size: 0.75rem; color: #999; margin-bottom: 4px; line-height: 1.5; }
 .note-text:last-child { margin-bottom: 0; }
+
+/* --- Cost Comparison Infographic (HTML Version) --- */
+.comparison-area {
+    background: white; border-radius: 20px; padding: 30px 20px;
+    box-shadow: var(--shadow-md); border: 2px solid #e0f2fe;
+}
+.comparison-header { text-align: center; margin-bottom: 25px; }
+.comparison-header h3 { font-size: 1.3rem; font-weight: 900; color: var(--primary-dark); margin-bottom: 5px; }
+.comp-note { font-size: 0.7rem; color: #999; }
+
+.comp-case { margin-bottom: 40px; }
+.comp-case:last-child { margin-bottom: 0; }
+.comp-case h4 { font-size: 1.1rem; font-weight: 700; margin-bottom: 10px; border-left: 4px solid var(--primary); padding-left: 10px; }
+
+.comp-flex { display: flex; flex-direction: column; gap: 10px; }
+.comp-card {
+    border-radius: 10px; padding: 15px; flex: 1;
+    display: flex; flex-direction: column;
+}
+.comp-card.general { background: #f3f4f6; border: 1px solid #e5e7eb; }
+.comp-card.free { background: #eff6ff; border: 2px solid var(--accent); position: relative; }
+.comp-card.free::after { content: "free"; position: absolute; top: -10px; right: 10px; background: var(--accent); color: white; padding: 2px 10px; border-radius: 20px; font-size: 0.7rem; font-weight: bold; }
+
+.comp-card-title { font-size: 0.9rem; font-weight: 700; text-align: center; margin-bottom: 10px; padding-bottom: 5px; border-bottom: 1px dashed #ccc; color: var(--text-sub); }
+.comp-card.free .comp-card-title { color: var(--primary); border-bottom-color: var(--accent); }
+
+.comp-list { font-size: 0.8rem; margin-bottom: 10px; flex-grow: 1; list-style: none; padding: 0; }
+.comp-list li { margin-bottom: 4px; position: relative; padding-left: 1em; }
+.comp-list li::before { content: "・"; position: absolute; left: 0; }
+
+.comp-total { font-weight: 900; text-align: center; background: white; padding: 8px; border-radius: 6px; font-size: 0.95rem; }
+.comp-card.free .comp-total { color: #e11d48; border: 1px solid #e11d48; }
+
+.comp-diff {
+    text-align: center; margin-top: 10px; font-weight: 700; color: var(--primary-dark); font-size: 1rem;
+    background: #fffbeb; padding: 8px; border-radius: 8px;
+}
+.comp-diff strong { color: #e11d48; font-size: 1.3rem; margin: 0 4px; }
+.diff-arrow { color: var(--accent); }
 
 /* --- Flow (Steps) --- */
 .step-list { display: flex; flex-direction: column; gap: 20px; }
@@ -191,12 +230,11 @@ ul { list-style: none; }
 .pc-features li { margin-bottom: 8px; padding-left: 18px; position: relative; }
 .pc-features li::before { content: "✔"; color: var(--line-color); position: absolute; left: 0; font-weight: bold; }
 
-/* Text Colors (Specific Request) */
+/* Text Colors */
 .pc-features li.text-black { color: var(--text-main); font-weight: normal; }
 .pc-features li.text-blue { color: var(--primary); font-weight: 700; }
 .pc-features li.mute { color: #aaa; }
 
-.table-scroll-hint { font-size: 0.7rem; color: #999; text-align: right; padding-right: 20px; margin-bottom: 5px; }
 .table-container { overflow-x: auto; padding-bottom: 10px; }
 .clean-table { width: 100%; border-collapse: collapse; min-width: 320px; font-size: 0.9rem; }
 .clean-table th, .clean-table td { padding: 12px; text-align: center; border-bottom: 1px solid #eee; white-space: nowrap; }
@@ -211,6 +249,7 @@ ul { list-style: none; }
 .fee-row dt { font-weight: 700; }
 .fee-row dd { font-weight: 700; font-family: var(--font-en); }
 .small { font-size: 0.75rem; color: #999; font-weight: normal; font-family: var(--font-jp); }
+.fee-note-bottom { font-size: 0.85rem; color: var(--primary); font-weight: 700; margin-top: 15px; text-align: center; }
 
 /* --- FAQ --- */
 .faq-grid { display: flex; flex-direction: column; gap: 12px; }
@@ -248,7 +287,7 @@ ul { list-style: none; }
 .bar-main { font-size: 1.1rem; font-weight: 700; }
 
 /* --- Animations & Safe Fallback --- */
-/* Default: Visible (Safe for No-JS or JS Errors) */
+/* Default: Visible */
 .fade-up, .fade-in { opacity: 1; transform: translateY(0); transition: 0.6s ease-out; }
 
 /* Only Hide if JS is Active */
@@ -281,12 +320,16 @@ body.js-active .visible { opacity: 1; transform: translateY(0); }
     .pricing-wrapper { flex-direction: row; align-items: flex-start; }
     .price-card { flex: 1; }
     
-    /* Tuition Rule PC Fix: Arrow points Right */
+    /* Tuition Rule PC Fix */
     .timeline-visual { flex-direction: row; justify-content: center; gap: 30px; }
     .timeline-arrow-container { flex-direction: column; margin: 0; }
     .timeline-label { margin-bottom: 5px; font-size: 1rem; }
-    .timeline-icon { transform: rotate(-90deg); } /* Arrow points right on PC */
+    .timeline-icon { transform: rotate(-90deg); }
     .timeline-item { width: auto; min-width: 280px; }
+    
+    /* Cost Comparison PC Fix */
+    .comp-flex { flex-direction: row; gap: 20px; }
+    .comp-diff { width: 80%; margin: 15px auto 0; font-size: 1.2rem; }
     
     .access-card { display: grid; grid-template-columns: 1fr 1fr; }
     .access-map { height: 100%; min-height: 400px; }
