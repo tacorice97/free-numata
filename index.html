@@ -124,7 +124,7 @@
                         <div class="icon-box">✨</div>
                         <div class="bento-content">
                             <h4>明瞭な料金体系</h4>
-                            <p>管理費や施設維持費などの隠れコストは一切ありません。</p>
+                            <p>管理費や施設維持費などの追加費用は一切ありません。</p>
                         </div>
                     </div>
                 </div>
@@ -274,10 +274,45 @@
                 </div>
 
                 <div class="pricing-wrapper stagger-trigger">
+
+                    <!-- コースA：プレミアム（デコイ） -->
+                    <div class="price-card stagger-item">
+                        <div class="pc-header">
+                            <span class="pc-badge" style="background: #1e293b;">受験生限定 ／ 月3名まで</span>
+                            <h4>コースA：受験専用プレミアムコース</h4>
+                            <p class="pc-desc">1対1指導 ＋ 通い放題 ＋ コーチング</p>
+                        </div>
+                        <div class="pc-features">
+                            <ul>
+                                <li class="text-black">1対1の完全個別指導</li>
+                                <li class="text-black">自習時の質問対応</li>
+                                <li class="text-blue">自習スペース使い放題</li>
+                                <li class="text-blue">週1回・生徒との学習コーチング面談</li>
+                                <li class="text-blue">月1回・保護者への学習レポート報告</li>
+                                <li class="text-blue">LINEでの質問対応・学習相談</li>
+                                <li class="text-blue">LINEでの作文・ライティング添削</li>
+                            </ul>
+                        </div>
+                        <div class="table-container">
+                            <table class="clean-table">
+                                <thead>
+                                    <tr><th>対象</th><th>週1コマ</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><th>小学生（中学受験）</th><td>20,000<span class="yen">円〜</span></td></tr>
+                                    <tr><th>中学生（高校受験）</th><td>24,000<span class="yen">円〜</span></td></tr>
+                                    <tr><th>高校生（大学受験）</th><td>28,000<span class="yen">円〜</span></td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+
+                    <!-- コースB：個別指導 ＆ 通い放題（旧コースA・メイン） -->
                     <div class="price-card recommended stagger-item">
                         <div class="pc-header">
-                            <span class="pc-badge">オススメ</span>
-                            <h4>コースA：個別指導 ＆ 通い放題コース</h4>
+                            <span class="pc-badge">⭐ いちばん人気</span>
+                            <h4>コースB：個別指導 ＆ 通い放題コース</h4>
                             <p class="pc-desc">学習習慣を劇的に変えるフルサポート</p>
                         </div>
                         <div class="pc-features">
@@ -289,7 +324,6 @@
                                 <li class="text-blue">LINEでの作文・ライティング添削</li>
                             </ul>
                         </div>
-                        
                         <div class="table-container">
                             <table class="clean-table">
                                 <thead>
@@ -304,9 +338,10 @@
                         </div>
                     </div>
 
+                    <!-- コースC：個別指導コース（旧コースB） -->
                     <div class="price-card stagger-item">
                         <div class="pc-header">
-                            <h4>コースB：個別指導コース</h4>
+                            <h4>コースC：個別指導コース</h4>
                             <p class="pc-desc">決まった時間で集中して学びたい方</p>
                         </div>
                         <div class="pc-features">
@@ -330,6 +365,7 @@
                             </table>
                         </div>
                     </div>
+
                 </div>
 
                 <div class="fees-simple fade-in">
@@ -382,6 +418,10 @@
                     <details class="faq-details stagger-item">
                         <summary>夏期講習・冬期講習のみの参加は可能ですか？ <span class="icon">+</span></summary>
                         <div class="faq-answer">はい、可能です。外部生料金となりますので詳細はお問合せください。</div>
+                    </details>
+                    <details class="faq-details stagger-item">
+                        <summary>コースAは定員に達した場合どうなりますか？ <span class="icon">+</span></summary>
+                        <div class="faq-answer">定員（月3名）に達した場合はウェイティングリストへのご登録となります。空き次第、公式LINEにてご連絡いたします。</div>
                     </details>
                 </div>
             </div>
@@ -457,7 +497,7 @@
             // IntersectionObserverによるアニメーション
             const observerOptions = {
                 root: null,
-                rootMargin: '0px 0px -100px 0px', // 少し手前で発火
+                rootMargin: '0px 0px -100px 0px',
                 threshold: 0.1
             };
 
@@ -466,13 +506,12 @@
                     if (entry.isIntersecting) {
                         entry.target.classList.add('visible');
                         
-                        // stagger（順番に表示）の処理
                         if (entry.target.classList.contains('stagger-trigger')) {
                             const items = entry.target.querySelectorAll('.stagger-item');
                             items.forEach((item, index) => {
                                 setTimeout(() => {
                                     item.classList.add('visible');
-                                }, index * 100); // 0.1秒ずつずらす
+                                }, index * 100);
                             });
                         }
                     }
